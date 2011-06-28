@@ -1,4 +1,5 @@
 import urllib2
+import json
 
 class Account(object):
 	"""Account wrapper for Sifter"""
@@ -8,5 +9,7 @@ class Account(object):
 	
 	def projects(self):
 		"""Gets all the projects from sifter"""
-		pass
-	
+		url = self.host + '/api/projects'
+		req = urllib2.Request(url)
+		req.add_header('X-Sifter-Token', self.token)
+		return urllib2.urlopen(req).read()

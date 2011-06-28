@@ -12,4 +12,6 @@ class Account(object):
 		url = self.host + '/api/projects'
 		req = urllib2.Request(url)
 		req.add_header('X-Sifter-Token', self.token)
-		return urllib2.urlopen(req).read()
+		json_raw = json.loads(urllib2.urlopen(req).read())
+		return json_raw
+	

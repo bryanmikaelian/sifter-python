@@ -4,7 +4,9 @@ sifter-python is a simple wrapper for the Sifter API.  It is written in python a
 This is a work in progress (like my C-Sharp wrapper) and will slowly include milestones, issues, and other resources.
 
 # Getting the projects
-    a = Account(host,token)
+	import account
+	
+    a = account.Account(host,token)
     a.projects() # Returns a list of projects
 
 # Thoughts, comments, suggestions?

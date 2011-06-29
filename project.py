@@ -2,7 +2,8 @@ import issue
 
 class Project(object):
 	"""Representation of a project in Sifter"""
-	def __init__(self, project):
+	def __init__(self, project, token):
+		self.api_token = token
 		self.issues_url = project['issues_url']
 		self.archived = project['archived']
 		self.url = project['url']

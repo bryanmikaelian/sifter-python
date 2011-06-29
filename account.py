@@ -17,7 +17,7 @@ class Account(object):
 		json_raw = json.loads(urllib2.urlopen(req).read())
 		raw_projects = json_raw['projects']
 		for raw_project in raw_projects:
-			p = project.Project(raw_project)
+			p = project.Project(raw_project, self.token)
 			projects.append(p)
 		
 		return projects

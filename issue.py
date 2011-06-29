@@ -2,7 +2,8 @@ class Issue(object):
 	"""Representation of an Issue in Sifter"""
 	def __init__(self, issue):
 		self.number = issue['number']
-		self.subject = issue['description']
+		self.subject = issue['subject']
+		self.description = issue['description']
 		self.priority = issue['priority']
 		self.status = issue['status']
 		self.assignee_name = issue['assignee_name']

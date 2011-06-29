@@ -18,7 +18,7 @@ class Project(object):
 	
 	def issues(self):
 		"""Gets all the issues for a given project"""
-		issues = list()
+		issues = []
 		url = self.api_issues_url
 		req = urllib2.Request(url)
 		req.add_header('X-Sifter-Token', self.api_token)

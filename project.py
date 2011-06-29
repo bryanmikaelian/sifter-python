@@ -1,3 +1,5 @@
+import issue
+
 class Project(object):
 	"""Representation of a project in Sifter"""
 	def __init__(self, project):
@@ -11,3 +13,6 @@ class Project(object):
 		self.api_categories_url = project['api_categories_url']
 		self.name = project['name']
 	
+	def issues(self):
+		"""Gets all the issues for a given project"""
+		pass

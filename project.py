@@ -22,7 +22,7 @@ class Project(object):
 		url = self.api_issues_url
 		req = urllib2.Request(url)
 		req.add_header('X-Sifter-Token', self.api_token)
-		
+		req.add_header('Accept', 'application/json')
 		# Get page one
 		json_raw = json.loads(urllib2.urlopen(req).read())
 		
@@ -43,7 +43,7 @@ class Project(object):
 			url = next_page
 			req = urllib2.Request(url)
 			req.add_header('X-Sifter-Token', self.api_token)
-			
+			req.add_header('Accept', 'application/json')
 			# store the results
 			json_raw = json.loads(urllib2.urlopen(req).read())
 			

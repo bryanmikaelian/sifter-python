@@ -53,3 +53,50 @@ class Project(object):
 		
 		return issues
 	
+	def milestones(self):
+		"""Gets all the milestones for a given project"""
+		milestones = []
+		url = self.api_milestones_url
+		req = urllib2.Request(url)
+		req.add_header('X-Sifter-Token', self.api_token)
+		req.add_header('Accept', 'application/json')
+		json_raw = json.loads(urllib2.urlopen(req).read())
+		
+		raw_milestones = json_raw['milestones']
+		for raw_milestone in raw_milestones:
+			m = milestone.Milestone(raw_milestone, self.token)
+			milestones.append(m)
+			
+			return milestones
+
+	def categories(self):
+			"""Gets all the categories for a given project"""
+			categories = []
+			url = self.api_categories_url
+			req = urllib2.Request(url)
+			req.add_header('X-Sifter-Token', self.api_token)
+			req.add_header('Accept', 'application/json')
+			json_raw = json.loads(urllib2.urlopen(req).read())
+			
+			raw_categories = json_raw['categories']
+			for raw_category in raw_categories:
+				c = category.Category(raw_category, self.token)
+				categories.append(c)
+				
+				return categories
+	
+	def people(self):
+			"""Gets all the people for a given project"""
+			people = []
+			url = self.api_people_url
+			req = urllib2.Request(url)
+			req.add_header('X-Sifter-Token', self.api_token)
+			req.add_header('Accept', 'application/json')
+			json_raw = json.loads(urllib2.urlopen(req).read())
+			
+			raw_people = json_raw['people']
+			for raw_user in raw_people:
+				u = user.User(raw_user, self.token)
+				people.append(u)
+				
+				return people	

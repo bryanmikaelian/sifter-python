@@ -3,6 +3,6 @@ class Milestone(object):
 	def __init__(self, milestone):
 		self.name = milestone['name']
 		self.due_date = milestone['due_date']
-		self.issue_url = milestone['issue_url']
-		self.api_issue_url = milestone['api_issue_url']
+		self.issues_url = milestone['issues_url']
+		self.api_issues_url = milestone['api_issues_url']
 	

@@ -37,6 +37,7 @@ def main():
 		issues = p.issues()
 		for i in issues:
 			print i.number, i.subject
+			end
 			
 		milestones = p.milestones()
 		for m in milestones:

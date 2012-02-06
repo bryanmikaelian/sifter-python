@@ -1,6 +1,9 @@
 import urllib2
 import json
 import issue
+import milestone
+import category
+import user
 
 class Project(object):
 	"""Representation of a project in Sifter"""
@@ -64,7 +67,7 @@ class Project(object):
 		
 		raw_milestones = json_raw['milestones']
 		for raw_milestone in raw_milestones:
-			m = milestone.Milestone(raw_milestone, self.token)
+			m = milestone.Milestone(raw_milestone)
 			milestones.append(m)
 			
 			return milestones
@@ -80,7 +83,7 @@ class Project(object):
 			
 			raw_categories = json_raw['categories']
 			for raw_category in raw_categories:
-				c = category.Category(raw_category, self.token)
+				c = category.Category(raw_category)
 				categories.append(c)
 				
 				return categories
@@ -96,7 +99,7 @@ class Project(object):
 			
 			raw_people = json_raw['people']
 			for raw_user in raw_people:
-				u = user.User(raw_user, self.token)
+				u = user.User(raw_user)
 				people.append(u)
 				
 				return people	

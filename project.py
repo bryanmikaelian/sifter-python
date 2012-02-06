@@ -70,7 +70,7 @@ class Project(object):
 			m = milestone.Milestone(raw_milestone)
 			milestones.append(m)
 			
-			return milestones
+		return milestones
 
 	def categories(self):
 			"""Gets all the categories for a given project"""
@@ -86,7 +86,7 @@ class Project(object):
 				c = category.Category(raw_category)
 				categories.append(c)
 				
-				return categories
+			return categories
 	
 	def people(self):
 			"""Gets all the people for a given project"""
@@ -102,4 +102,4 @@ class Project(object):
 				u = user.User(raw_user)
 				people.append(u)
 				
-				return people	
+			return people	

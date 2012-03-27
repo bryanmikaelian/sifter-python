@@ -1,5 +1,6 @@
 import comment
 
+
 class Issue(object):
     """Representation of an Issue in Sifter"""
     def __init__(self, issue, account):
@@ -18,7 +19,7 @@ class Issue(object):
         self.comment_count = issue['comment_count']
         self.created_at = issue['created_at']
         self.updated_at = issue['updated_at']
-    
+
     def comments(self):
         """Gets Comments for a given Issue"""
         comments = []
@@ -28,5 +29,5 @@ class Issue(object):
         for raw_comment in raw_comments:
             c = comment.Comment(raw_comment)
             comments.append(c)
-        
+
         return comments

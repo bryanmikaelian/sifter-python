@@ -23,8 +23,8 @@ class Issue(object):
         """Gets Comments for a given Issue"""
         comments = []
         json_raw = self._account.request(self.api_url)
-        
-        raw_comments = json_raw['comments']
+        raw_issue = json_raw['issue']
+        raw_comments = raw_issue['comments']
         for raw_comment in raw_comments:
             c = comment.Comment(raw_comment)
             comments.append(c)

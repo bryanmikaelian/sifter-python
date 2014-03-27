@@ -15,7 +15,12 @@ class Account(object):
         req = requests.get(url, headers={'X-Sifter-Token': self.token,
                                          'Accept': 'application/json'})
 
-        return json.loads(req.content)
+        try:
+            loadcontent =  json.loads(req.content)
+        except ValueError:
+            return loadcontent['issue']
+        else:
+            return loadcontent
 
     def projects(self):
         """Gets all the projects from sifter"""
